@@ -40,3 +40,8 @@ That should open your default browser with the homepage
 or else open a browser(Chrome/Firefox) and hit
 
 localhost:3000
+
+
+## Frontend Flow Info could be found @
+
+https://drive.google.com/file/d/19BRLT8JOdjwM27sHQ84A3XH0BotwJzdK/view?usp=sharing
