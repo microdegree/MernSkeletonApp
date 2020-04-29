@@ -42,6 +42,6 @@ or else open a browser(Chrome/Firefox) and hit
 localhost:3000
 
 
-## Frontend Flow Info could be found @
+## Frontend Class Flow Diagram : 
 
-https://drive.google.com/file/d/19BRLT8JOdjwM27sHQ84A3XH0BotwJzdK/view?usp=sharing
+https://drive.google.com/file/d/1vTQHN9eqj_5S84_7qu16eGsvrItuRA--/view?usp=sharing
