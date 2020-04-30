@@ -9,9 +9,9 @@ const AddProject = (props) => {
     const { register, handleSubmit, errors } = useForm();
     const onSubmit = data => {
         console.log(data);
-        callServerToAddDoctorInfo(data)
+        callServerToAddInfo(data)
 
-        props.history.push('./doctorDashboard')
+        props.history.push('./corporateDashboard')
     }
     console.log(errors);
 
@@ -78,12 +78,12 @@ const AddProject = (props) => {
         </div>
     )
 
-    function callServerToAddDoctorInfo(requestObject) {
+    function callServerToAddInfo(requestObject) {
 
         requestObject = { ...requestObject, "email": auth.userEmail, "imageName": props.location.fileNameImage }
         console.log('call server 1 ', requestObject)
 
-        fetch('/api/admin/updateProjectInfo', {
+        fetch('/api/admin/addProject', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -92,7 +92,7 @@ const AddProject = (props) => {
         })
             .then(res => res.json())
             .then(data1 => console.log('data from update ', data1))
-            .catch(error => console.log('Error while updating doctor Info ', error))
+            .catch(error => console.log('Error while adding Info ', error))
 
     }
 

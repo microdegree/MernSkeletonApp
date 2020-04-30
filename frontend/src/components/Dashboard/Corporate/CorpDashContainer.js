@@ -5,6 +5,8 @@ import CorpDashUI from './CorpDashUI';
 import AddProject from './AddProject/AddProject';
 import { Route } from "react-router-dom";
 import UploadProjectImage from './AddProject/UploadProjectImage';
+import ShowProjects from './ShowProjects/ShowProjects';
+import ModifyProjectModal from './ShowProjects/ModifyProject/ModifyProjectModal';
 
 const CorpDashContainer = (props) => {
 
@@ -23,6 +25,9 @@ const CorpDashContainer = (props) => {
             <Route exact path="/corporateDashboard" component={CorpDashUI} />
             <Route exact path="/corporateDashboard/myAppointments" component={AddProject} />
             <Route exact path="/corporateDashboard/uploadProjectImage" component={UploadProjectImage} />
+
+            <Route exact path="/corporateDashboard/showProjects" component={ShowProjects} />
+            <Route exact path="/corporateDashboard/showProjects/modal/modifyProject" component={ModifyProjectModal} />
 
         </div>
     )

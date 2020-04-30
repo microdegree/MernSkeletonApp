@@ -10,33 +10,33 @@ const DetailsComponent = (props) => {
     const [bookingInfo, setBookingInfo] = useState({})
     return (
         <div>
-            Doctor Details
+            projectData Details
             <Link to={{
                 pathname: '/freelancerDashboard/confirmationPage',
-                doctor: props.location.doctor,
+                projectData: props.location.projectData,
                 bookingInfo: "ticketQuantity"
 
             }}><Button>Apply Now</Button></Link>
 
-            {props.location.doctor.email}<br />
-            {props.location.doctor.specialization}
+            {props.location.projectData.email}<br />
+            {props.location.projectData.specialization}
 
-            <Row>{props.location.doctor.projectTitle}</Row>
-            <Row>{props.location.doctor.projectDescription}</Row>
-            <Row>{props.location.doctor.projectTimeline}</Row>
-            <Row>{props.location.doctor.projectManagerName}</Row>
-            <Row>{props.location.doctor.projectManagerContact}</Row>
-            <Row>{props.location.doctor.projectManagerEmail}</Row>
-            <Row>{props.location.doctor.projectCategory}</Row>
-            <Row>{props.location.doctor.projectTechnology}</Row>
-            <Row>{props.location.doctor.projectBudget}</Row>
+            <Row>{props.location.projectData.projectTitle}</Row>
+            <Row>{props.location.projectData.projectDescription}</Row>
+            <Row>{props.location.projectData.projectTimeline}</Row>
+            <Row>{props.location.projectData.projectManagerName}</Row>
+            <Row>{props.location.projectData.projectManagerContact}</Row>
+            <Row>{props.location.projectData.projectManagerEmail}</Row>
+            <Row>{props.location.projectData.projectCategory}</Row>
+            <Row>{props.location.projectData.projectTechnology}</Row>
+            <Row>{props.location.projectData.projectBudget}</Row>
 
             <Row>
                 <Col>
-                    <Card.Img variant="top" src={props.location.doctor.imageName} style={{ padding: 10 }} />
+                    <Card.Img variant="top" src={props.location.projectData.imageName} style={{ padding: 10 }} />
                 </Col>
                 <Col>
-                    <Row>{props.location.doctor.projectDescription}</Row>
+                    <Row>{props.location.projectData.projectDescription}</Row>
                 </Col>
             </Row>
         </div>

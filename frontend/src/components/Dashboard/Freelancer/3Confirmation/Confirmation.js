@@ -9,7 +9,7 @@ const Confirmation = (props) => {
 
             <br />Booking Info <br />
 
-            {props.location.doctor.specialization}
+            {props.location.projectData.specialization}
             {props.location.bookingInfo}
 
             <br /> <br />
@@ -26,7 +26,7 @@ const Confirmation = (props) => {
             },
             body: JSON.stringify({
                 "email": auth.userEmail,
-                "specialization": props.location.doctor.specialization,
+                "specialization": props.location.projectData.specialization,
             }),
         })
             .then(res => res.json())

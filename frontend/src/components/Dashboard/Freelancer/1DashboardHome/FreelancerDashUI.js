@@ -5,30 +5,30 @@ import CardDeck from 'react-bootstrap/CardDeck'
 
 const FreelancerDashUI = (props) => {
 
-    const [doctors, setDoctors] = useState([])
+    const [corporate, setCorporate] = useState([])
 
     useEffect(() => {
-        fetchDoctorsFromServer()
+        fetchProjectsFromServer()
 
     }, [])
 
     return (
         <div>
             <CardDeck>
-                {doctors.map(doctor =>
-                    <ProjectCard key={doctor._id} doctor={doctor} />
+                {corporate.map(projectData =>
+                    <ProjectCard key={projectData._id} projectData={projectData} />
                 )}
             </CardDeck>
         </div >
 
     )
 
-    function fetchDoctorsFromServer() {
-        console.log('In fetchDoctorsFromServer ')
+    function fetchProjectsFromServer() {
+        console.log('In fetchProjectsFromServer ')
         fetch('/api/consumer/getAllProjects')
             .then(response => response.json())
             .then(data => {
-                setDoctors(data)
+                setCorporate(data)
             })
             .catch(err => console.log('Error when calling api : ' + err))
     }

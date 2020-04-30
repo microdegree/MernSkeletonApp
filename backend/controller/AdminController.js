@@ -1,22 +1,8 @@
 var express = require('express');
 var router = express.Router();
 
-// // ******** Get All Appointments ******** 
-// router.get("/getDoctorAppointments", (request, response) => {
-
-//     console.log('In Get Appointments')
-//     database.collection("appointmentsTable").find({}).toArray((error, result) => {
-//         if (error) {
-//             return response.status(500).send(error);
-//         }
-
-//         console.log(result)
-//         response.send(result);
-//     });
-// });
-
 // ******** Update Project Info ******** 
-router.post("/updateProjectInfo", (request, response) => {
+router.post("/addProject", (request, response) => {
 
     console.log('Update Info  ', request.body.email);
     console.log('Update Info  ', request.body);
@@ -34,6 +20,33 @@ router.post("/updateProjectInfo", (request, response) => {
 
         })
 
+});
+
+// ******** Fetch User Info using email ******** 
+router.post("/getMyProjects", (request, response) => {
+
+    console.log('In getMyProjects', request.body)
+    database.collection("projectInfoTable").find(request.body).toArray((error, result) => {
+        if (error) {
+            console.log(error)
+            return response.status(500).send(error);
+        }
+
+        console.log(result)
+        response.send(result);
+    });
+});
+
+router.post("/modifyProject", (request, response) => {
+    console.log('In Admin controller modifyProject', request.body)
+    database.collection("projectInfoTable").replaceOne({ 'email': request.body.email }, request.body, (error, result) => {
+        if (error) {
+            console.log(error)
+
+            return response.status(500).send(error);
+        }
+        response.send(result.result);
+    });
 });
 
 //File Upload Library

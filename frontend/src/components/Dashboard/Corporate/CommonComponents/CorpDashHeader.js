@@ -13,6 +13,7 @@ const CorpDashHeader = (props) => {
                 <Nav className="mr-auto">
                     <Link exact to="/corporateDashboard"><Nav.Link href="#home">Home</Nav.Link></Link>
                     <Link to="/corporateDashboard/uploadProjectImage"> <Nav.Link href="#features">Add Project</Nav.Link></Link>
+                    <Link to="/corporateDashboard/showProjects"> <Nav.Link href="#features">My Projects</Nav.Link></Link>
 
                     <Button
                         onClick={() => {
