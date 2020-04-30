@@ -26,7 +26,7 @@ const UploadProjectImage = (props) => {
                 props.history.push('./myAppointments')
 
                 props.history.push({
-                    pathname: './myAppointments',
+                    pathname: './addProject',
                     fileNameImage: data.uploadedFileName
                 })
 

@@ -13,20 +13,21 @@ const Confirmation = (props) => {
             {props.location.bookingInfo}
 
             <br /> <br />
-            <Link to='/freelancerDashboard/paymentsGateway' onClick={confirmAppointmentAtServer}>COnfirm Booking and go to Payments</Link>
+            <Link to='/freelancerDashboard/paymentsGateway' onClick={confirmBookingAtServer}>COnfirm Booking and go to Payments</Link>
         </div>
     )
 
-    function confirmAppointmentAtServer() {
+    function confirmBookingAtServer() {
 
-        fetch('/api/patient/addNewAppointment', {
+        fetch('/api/consumer/addNewBooking', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify({
-                "email": auth.userEmail,
-                "specialization": props.location.projectData.specialization,
+                "consumerEmail": auth.userEmail,
+                "adminEmail": props.location.projectData.email,
+                "projectId": props.location.projectData._id
             }),
         })
             .then(res => res.json())

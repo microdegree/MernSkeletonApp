@@ -50,7 +50,7 @@ const CheckoutForm = () => {
         }
 
         // function callServer() {
-        //     const response = fetch('/api/patient/secret')
+        //     const response = fetch('/api//secret')
         //     const { client_secret: clientSecret } = response.json();
 
         //     console.log('clientSecret ', clientSecret)

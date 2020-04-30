@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 
-// ******** User Signup ******** 
+// ******** Add New Booking for consumer ******** 
 
 router.post("/addNewBooking", (request, response) => {
 

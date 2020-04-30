@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import auth from '../../Home/CommonComponents/Auth'
 import CorpDashHeader from './CommonComponents/CorpDashHeader';
-import CorpDashUI from './CorpDashUI';
+import CorpDashUI from './CorpDashHome/CorpDashUI';
 import AddProject from './AddProject/AddProject';
 import { Route } from "react-router-dom";
 import UploadProjectImage from './AddProject/UploadProjectImage';
@@ -23,7 +23,7 @@ const CorpDashContainer = (props) => {
             <CorpDashHeader logout={props.history} />
 
             <Route exact path="/corporateDashboard" component={CorpDashUI} />
-            <Route exact path="/corporateDashboard/myAppointments" component={AddProject} />
+            <Route exact path="/corporateDashboard/addProject" component={AddProject} />
             <Route exact path="/corporateDashboard/uploadProjectImage" component={UploadProjectImage} />
 
             <Route exact path="/corporateDashboard/showProjects" component={ShowProjects} />

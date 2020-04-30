@@ -65,7 +65,7 @@ const SignUp = (props) => {
 
                 if ('consumer' === requestObject.role) {
                     auth.authenticated = true;
-                    console.log('in patient flow signup')
+                    console.log('in consumer flow signup')
                     props.routeHistory.push("/freelancerDashboard");
                 } else if ('admin' === requestObject.role) {
                     auth.authenticated = true;

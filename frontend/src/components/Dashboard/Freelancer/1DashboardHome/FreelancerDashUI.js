@@ -13,13 +13,11 @@ const FreelancerDashUI = (props) => {
     }, [])
 
     return (
-        <div>
-            <CardDeck>
-                {corporate.map(projectData =>
-                    <ProjectCard key={projectData._id} projectData={projectData} />
-                )}
-            </CardDeck>
-        </div >
+        <CardDeck style={{ margin: 30 }}>
+            {corporate.map(projectData =>
+                <ProjectCard key={projectData._id} projectData={projectData} />
+            )}
+        </CardDeck>
 
     )
 

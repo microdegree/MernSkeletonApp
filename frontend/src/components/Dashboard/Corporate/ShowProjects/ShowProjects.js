@@ -13,14 +13,11 @@ const ShowProjects = () => {
     }, [])
 
     return (
-        <div>
-            <div>
-                <CardDeck>
-                    {corporate.map(projectData =>
-                        <ProjectCardAdmin key={projectData._id} projectData={projectData} />
-                    )}
-                </CardDeck>
-            </div >        </div>
+        <CardDeck style={{ margin: 30 }}>
+            {corporate.map(projectData =>
+                <ProjectCardAdmin key={projectData._id} projectData={projectData} />
+            )}
+        </CardDeck>
     )
 
     function fetchProjectsFromServer() {

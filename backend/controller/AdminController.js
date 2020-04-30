@@ -1,7 +1,10 @@
 var express = require('express');
 var router = express.Router();
 
-// ******** Update Project Info ******** 
+
+
+
+// ******** Add New Project ******** 
 router.post("/addProject", (request, response) => {
 
     console.log('Update Info  ', request.body.email);
@@ -22,7 +25,7 @@ router.post("/addProject", (request, response) => {
 
 });
 
-// ******** Fetch User Info using email ******** 
+// ******** Fetch My created projects ******** 
 router.post("/getMyProjects", (request, response) => {
 
     console.log('In getMyProjects', request.body)
@@ -46,6 +49,21 @@ router.post("/modifyProject", (request, response) => {
             return response.status(500).send(error);
         }
         response.send(result.result);
+    });
+});
+
+// ******** Fetch All My Bookings ******** 
+router.post("/getMyBookings", (request, response) => {
+
+    console.log('In getMyProjects', request.body)
+    database.collection("bookingTable").find(request.body).toArray((error, result) => {
+        if (error) {
+            console.log(error)
+            return response.status(500).send(error);
+        }
+
+        console.log(result)
+        response.send(result);
     });
 });
 
