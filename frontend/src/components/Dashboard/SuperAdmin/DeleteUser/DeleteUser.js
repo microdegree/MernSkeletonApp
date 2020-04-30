@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 
 const DeleteUser = () => {
     const [allUsers, setAllUsers] = useState([])
@@ -14,7 +15,10 @@ const DeleteUser = () => {
             <br /> <br />
             <ul>
                 {allUsers.map(user =>
-                    <li key={user._id}>{user.name} {user.email} {user.role}</li>
+                    <Link to={{
+                        pathname: `/superAdminDashboard/modal/deleteUser`,
+                        userData: user
+                    }}> <li key={user._id}>{user.name} {user.email} {user.role}</li></Link>
                 )}
             </ul>
         </div>
