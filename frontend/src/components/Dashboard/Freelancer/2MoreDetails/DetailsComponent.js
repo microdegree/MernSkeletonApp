@@ -33,7 +33,7 @@ const DetailsComponent = (props) => {
 
             <Row>
                 <Col>
-                    <Card.Img variant="top" src={props.location.projectData.imageName} style={{ padding: 10 }} />
+                    <Card.Img variant="top" src={'../' + props.location.projectData.imageName} style={{ padding: 10 }} />
                 </Col>
                 <Col>
                     <Row>{props.location.projectData.projectDescription}</Row>
